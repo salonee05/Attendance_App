@@ -1,0 +1,61 @@
+/*Login on home page*/
+
+.login {
+  text-align: center;
+  width: 100%;
+  max-width: 330px;
+  margin: auto;
+  padding-top: 10%;
+  /*padding-bottom: 10%;*/
+}
+
+.logo-image {
+  margin-bottom: 30 rem;
+}
+
+/*Registration page*/
+
+.register {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding-top: 5%;
+  /*padding-bottom: 10%;*/
+}
+
+.input {
+  padding: 0.5;
+  margin: 0%;
+}
+
+/*Student Table*/
+
+.student-table {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/*Error msg on sign in page*/
+
+.error {
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.close {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: black;
+}

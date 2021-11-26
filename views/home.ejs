@@ -1,0 +1,35 @@
+<%- include('partials/header'); -%>
+
+<form action="/" , method="POST" class="login">
+  <!--Post error msgs like invalid username/password if any-->
+  <% if(error.length != 0){ %>
+  <div class="error">
+    <span class="close" onclick="this.parentElement.style.display='none';"
+      >&times;</span
+    >
+    <%= error[0]; %>
+  </div>
+  <%}%>
+  <!--logo-->
+  <div class="mb-2">
+    <img class="logo-image" src="images/logo.png" alt="Logo" width="80rem" />
+  </div>
+  <div class="mb-2">
+    <h5>Sign in.</h5>
+    <!--Email-->
+    <label for="email" class="form-text">Email address</label>
+    <input type="email" class="form-control" name="email" />
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <!--password-->
+  <div class="mb-2">
+    <label for="password" class="form-text">Password</label>
+    <input type="password" class="form-control" name="password" />
+  </div>
+  <!--submit btn-->
+  <button type="submit" class="btn btn-primary mt-2">Submit</button>
+  <!--register link not active currently-->
+  <p class="mt-2">or <a href="#">Register</a></p>
+</form>
+
+<%- include('partials/footer'); -%>

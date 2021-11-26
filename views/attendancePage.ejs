@@ -1,0 +1,57 @@
+<%- include('partials/header'); -%>
+<!--display class name, title-list of students and total classes held form the subject-->
+<p class="h2 text-center mt-3"><%=class1.name%></p>
+<p class="h3 text-center mt-3">List of students</p>
+<p class="h5 text-center mt-3 text-muted">
+  Total Classes: <%- class1.totalClasses %>
+</p>
+<!--the table displays the student's role number, name and checkbox for marking the student as present. A form has been created which sends the students present (whose checkbox has been checked), and total classes of the subject-->
+<form
+  action="/classrooms/take-attendance/:<%=teacherId%>/:<%=class1.code%>/mark-attendance"
+  method="POST"
+>
+  <input
+    type="hidden"
+    name="totalAttendance"
+    value="<%= class1.totalClasses %>"
+  />
+  <div class="d-flex align-center mt-4 text-center">
+    <table class="table table-bordered table-striped student-table">
+      <thead>
+        <tr>
+          <th scope="col" class="col-md-2">School/College Id</th>
+          <th scope="col" class="col-md-2">Student Name</th>
+          <th scope="col" class="col-md-2">Mark Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%for(let i = 0; i < class1.students.length; i++){%>
+        <tr>
+          <!--display student's id and name-->
+          <td scope="row"><%- class1.students[i].StudentId %></td>
+          <td scope="row"><%- class1.students[i].StudentName %></td>
+          <td>
+            <!--checkbox for the marking the student as present-->
+            <span class="col-md-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="<%= JSON.stringify(class1.students[i])%>"
+                name="presentStudentObjects"
+              />
+              <label class="form-check-label" for="presentStudents">
+                Mark as Present
+              </label>
+            </span>
+          </td>
+        </tr>
+        <%}%>
+      </tbody>
+    </table>
+  </div>
+  <!--submit button-->
+  <div class="m-4 d-flex justify-content-end">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<%-include('partials/footer'); -%>

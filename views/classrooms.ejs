@@ -1,0 +1,63 @@
+<%- include('partials/header'); -%>
+<!--Classrooms joined/created-->
+<div class="row mt-4" style="margin: auto">
+  <%for(let i = 0; i < user.classes.length; i++){%> <%if(user.role ===
+  "Teacher"){%>
+  <!--Teacher View-->
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+    <div
+      class="card text-center"
+      style="height: 15rem"
+    >
+      <div class="card-body">
+        <!--display class name-->
+        <h5 class="card-title"><%- user.classes[i].className%></h5>
+        <form
+          class="row mt-5 mb-3 align-items-center"
+          method="GET"
+          action="/classrooms/view-attendance/:<%=user.userId%>/:<%=user.classes[i].classCode%>"
+        >
+          <!--view attendance of the class directs to the view attendace page-->
+          <div>
+            <button type="submit" class="btn btn-primary">
+              View Attendance
+            </button>
+          </div>
+        </form>
+        <!--take attendance of the class, directs to the take attendace page-->
+        <form
+          class="row mt-5 mb-3 align-items-center"
+          method="GET"
+          action="/classrooms/take-attendance/:<%=user.userId%>/:<%=user.classes[i].classCode%>"
+        >
+          <div>
+            <button type="submit" class="btn btn-primary">
+              Take Attendance
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%}else{%>
+  <!--Student View-->
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+    <div
+      class="card text-center text-white"
+      style="height: 12rem; background-color: #077a7a"
+    >
+      <div class="card-body">
+        <!--display class name-->
+        <h3 class="card-title"><%- user.classes[i].className%></h3>
+        <!--display attendance of the student and the total classes held-->
+        <p class="card-text mt-5 h5">
+          Attendance: <%- user.classes[i].attendance %>/<%=
+          user.classes[i].totalClasses %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <%}%> <%}%>
+</div>
+
+<%- include('partials/footer'); -%>

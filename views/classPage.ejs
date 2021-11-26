@@ -1,0 +1,31 @@
+<%- include('partials/header'); -%>
+<!--display class name-->
+<p class="h2 text-center mt-3"><%=class1.name%></p>
+<!--display the title list of students-->
+<p class="h3 text-center mt-3">List of students</p>
+<!--display total number of classes held for the particular subject-->
+<p class="h5 text-center mt-3 text-muted">
+  Total Classes: <%- class1.totalClasses %>
+</p>
+<!--the table displays the student's role number, name and attendance-->
+<div class="d-flex align-center mt-4 text-center">
+  <table class="table table-bordered table-striped student-table">
+    <thead>
+      <tr>
+        <th scope="col" class="col-md-2">School/College Id</th>
+        <th scope="col" class="col-md-2">Student Name</th>
+        <th scope="col" class="col-md-3">Attendance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%for(let i = 0; i < class1.students.length; i++){%>
+      <tr>
+        <td scope="row"><%- class1.students[i].StudentId %></td>
+        <td scope="row"><%- class1.students[i].StudentName %></td>
+        <td><%- class1.students[i].Attendance %></td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>
+<%-include('partials/footer'); -%>
