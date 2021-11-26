@@ -1,14 +1,14 @@
 <%- include('partials/header'); -%>
+<div class="d-flex justify-content-end m-2" style="padding-right: 10px">
+  <h5>Hi, <%=user.name%></h5>
+</div>
 <!--Classrooms joined/created-->
 <div class="row mt-4" style="margin: auto">
   <%for(let i = 0; i < user.classes.length; i++){%> <%if(user.role ===
   "Teacher"){%>
   <!--Teacher View-->
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-    <div
-      class="card text-center"
-      style="height: 15rem"
-    >
+    <div class="card text-center" style="height: 15rem">
       <div class="card-body">
         <!--display class name-->
         <h5 class="card-title"><%- user.classes[i].className%></h5>
