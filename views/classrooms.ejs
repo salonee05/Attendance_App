@@ -13,7 +13,7 @@
         <!--display class name-->
         <h5 class="card-title"><%- user.classes[i].className%></h5>
         <form
-          class="row mb-3 align-items-center"
+          class="row mt-3 mb-3 align-items-center"
           method="GET"
           action="/classrooms/view-attendance/:<%=user.userId%>/:<%=user.classes[i].classCode%>"
         >
@@ -50,7 +50,7 @@
         <!--display class name-->
         <h3 class="card-title"><%- user.classes[i].className%></h3>
         <!--display attendance of the student and the total classes held-->
-        <p class="card-text mb-3 h5">
+        <p class="card-text mt-5 mb-3 h5">
           Attendance: <%- user.classes[i].attendance %>/<%=
           user.classes[i].totalClasses %>
         </p>
