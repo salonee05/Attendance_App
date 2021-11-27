@@ -41,10 +41,10 @@ This web app makes it possible for the teacher to submit the attendance of the s
 # ![teacher-dashboard](https://user-images.githubusercontent.com/72302207/143685847-b427f64a-004b-4e53-be5c-586ff7733a0f.png)
 
 #### View Attendance
-#![view-attendance](https://user-images.githubusercontent.com/72302207/143685867-bdd5e41a-f050-4964-9e88-256078ac81b7.png)
+# ![view-attendance](https://user-images.githubusercontent.com/72302207/143685867-bdd5e41a-f050-4964-9e88-256078ac81b7.png)
 
 #### Take Attendance
-#![mark-attendance](https://user-images.githubusercontent.com/72302207/143685884-e881f3e2-592c-4e6e-912a-c9372a6be2c6.png)
+# ![mark-attendance](https://user-images.githubusercontent.com/72302207/143685884-e881f3e2-592c-4e6e-912a-c9372a6be2c6.png)
 
 ## Future Scope
 #### •Adding sign up functionality.
