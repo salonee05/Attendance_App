@@ -8,7 +8,7 @@ This web app makes it possible for the teacher to submit the attendance of the s
 
 
 ## Tech Stack
-#### HTML CSS Javascript Bootstrap Node js Express js MongoDb VS Code Heroku
+#### HTML|CSS|Javascript|Bootstrap|Node js|Express js|MongoDb|VS Code|Heroku
 
 
 ## Instructions
