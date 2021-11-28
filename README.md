@@ -18,6 +18,8 @@ This web app makes it possible for the teacher to submit the attendance of the s
 #### 4. In app.js file Set port as 3000 and delete lines 24-26.
 #### 5. Run command node app.js in cmd
 #### 6. The app is now running at http://localhost:3000
+#
+#### The website is also hosted at https://whispering-lake-33806.herokuapp.com/
 
 
 ## Features
