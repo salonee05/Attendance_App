@@ -4,6 +4,7 @@
 
 This web app makes it possible for the teacher to submit the attendance of the student in their class. Conventionally, teachers mark attendance on an attendance sheet. However, now they can mark the attendance digitally and make it possible for the students as well to keep track of their attendance.
 #### The website is hosted at https://whispering-lake-33806.herokuapp.com/
+#### You tube video link: https://youtu.be/E1ONA-17Beo
 
 ![attendance_image](https://user-images.githubusercontent.com/72302207/143684169-64593388-5561-4fef-84c8-0b3fa30d17bf.jpg)
 
