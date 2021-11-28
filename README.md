@@ -3,6 +3,7 @@
 ## Submission for Microsoft Engage November 2021
 
 This web app makes it possible for the teacher to submit the attendance of the student in their class. Conventionally, teachers mark attendance on an attendance sheet. However, now they can mark the attendance digitally and make it possible for the students as well to keep track of their attendance.
+#### The website is hosted at https://whispering-lake-33806.herokuapp.com/
 
 ![attendance_image](https://user-images.githubusercontent.com/72302207/143684169-64593388-5561-4fef-84c8-0b3fa30d17bf.jpg)
 
@@ -35,18 +36,19 @@ This web app makes it possible for the teacher to submit the attendance of the s
 # ![sign-in](https://user-images.githubusercontent.com/72302207/143685779-8338ab48-ab1d-4153-a9e8-6adcbabf8d89.png)
 
 #### Student Dashboard
-# ![student-dashboard](https://user-images.githubusercontent.com/72302207/143685807-b429d1cb-fe32-4ce7-9308-8451b25f8ec4.png)
+# ![student-dashboard](https://user-images.githubusercontent.com/72302207/143763878-f7c96a98-765e-4f3e-9535-3a31a9eab535.png)
 
 #### Teacher Dashboard
-# ![teacher-dashboard](https://user-images.githubusercontent.com/72302207/143685847-b427f64a-004b-4e53-be5c-586ff7733a0f.png)
+# ![teacher-dashboard](https://user-images.githubusercontent.com/72302207/143763889-85c89213-ddeb-4121-b24b-11d056d009b0.png)
 
 #### View Attendance
-# ![view-attendance](https://user-images.githubusercontent.com/72302207/143685867-bdd5e41a-f050-4964-9e88-256078ac81b7.png)
+# ![view-attendance](https://user-images.githubusercontent.com/72302207/143763898-a7aea5f4-9e17-45b0-b7bb-86f99ba87e5d.png)
 
 #### Take Attendance
-# ![mark-attendance](https://user-images.githubusercontent.com/72302207/143685884-e881f3e2-592c-4e6e-912a-c9372a6be2c6.png)
+# ![mark-attendance](https://user-images.githubusercontent.com/72302207/143763907-7cc82230-1ea5-40e4-847a-81c0f839a341.png)
 
 ## Future Scope
 #### •Adding sign up functionality.
 #### •Allowing teacher to create classroom.
-#### •Downloading the attendance in the frm of excel sheet.
+#### •Downloading the attendance in the form of excel sheet.
+#### •Allow teacher to make announcements.
