@@ -28,7 +28,7 @@ This web app makes it possible for the teacher to submit the attendance of the s
 #### 4. Display the attendance of the student and the total classes of a particular subject on the dashboard.
 #### 5. Separate dashboard for students and teachers
 #### 6. Sign in feature and password encrytption using bcrypt.
-#### 7. Currently working on pre defined database.
+#### 7. Currently working on pre defined database. The credentials for students and teachers are available in the credentials file in the repository.
 
 
 ## Snapshots of the web app
