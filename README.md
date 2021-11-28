@@ -50,4 +50,5 @@ This web app makes it possible for the teacher to submit the attendance of the s
 ## Future Scope
 #### •Adding sign up functionality.
 #### •Allowing teacher to create classroom.
-#### •Downloading the attendance in the frm of excel sheet.
+#### •Downloading the attendance in the form of excel sheet.
+#### •Allow teacher to make announcements.
