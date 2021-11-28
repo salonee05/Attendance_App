@@ -24,6 +24,21 @@ exports.postSignin = (req, res, next) => {
       bcrypt.compare(password, foundUser.password, function (err, result) {
         if (result == true) {
           console.log("Successfully logged in");
+          User.findOneAndUpdate(
+            { email: email },
+            {
+              $set: {
+                "isAuth": true,
+              },
+            },
+            function (error, success) {
+              if (error) {
+                console.log(error);
+              } else {
+                console.log(success);
+              }
+            }
+          );
           res.redirect("/classrooms/:" + foundUser.userId);
         } else {
           error.push("Invalid username/password");
@@ -34,21 +49,26 @@ exports.postSignin = (req, res, next) => {
   });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Log out the user */
+exports.logout = (req, res, next) => {
+  const userId = req.body.userId;
+  User.findOneAndUpdate(
+    { userId: userId },
+    {
+      $set: {
+        "isAuth": false,
+      },
+    },
+    function (error, success) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log(success);
+      }
+    }
+  );
+  res.redirect("/");
+};
 
 /* to be ignored right now */
 /*exports.postSignup = (req, res, next) => {

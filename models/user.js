@@ -32,7 +32,10 @@ const userSchema = new Schema({
       totalClasses: Number,
     },
   ],
+  isAuth: {
+    type: Boolean,
+    required: true,
+  },
 });
-
 
 module.exports = mongoose.model("User", userSchema);

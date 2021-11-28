@@ -14,6 +14,14 @@ router.get("/", function (req, res) {
 /* post the sign in of the user */
 router.post("/", authController.postSignin);
 
+/* get 401 error page */
+router.get("/notAuth", function (req, res) {
+  res.render("401");
+});
+
+/* log out the user */
+router.post("/logout", authController.logout);
+
 module.exports = router;
 
 /*register code to be ignored right now*/

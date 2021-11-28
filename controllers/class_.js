@@ -2,50 +2,69 @@ const User = require("../models/user");
 const Class = require("../models/class_");
 const generator = require("generate-password");
 
-/* get the classroom.ejs page for a user */
+/* get the classroom.ejs page for authenticated user */
 exports.getClassroom = (req, res, next) => {
   const userId = req.params.userId.slice(1);
   User.findOne({ userId: userId }, function (err, foundUser) {
-    if (err) console.log(err);
-    if (foundUser) {
-      res.render("classrooms", {
-        path: "/classrooms",
-        user: foundUser,
+    if (foundUser.isAuth !== true) {
+      res.redirect("/notAuth");
+    } else {
+      User.findOne({ userId: userId }, function (err, foundUser) {
+        if (err) console.log(err);
+        if (foundUser) {
+          res.render("classrooms", {
+            path: "/classrooms",
+            user: foundUser,
+          });
+        }
       });
     }
   });
 };
 
-/* get the classPage.ejs file for the teacher to view attendance */
+/* get the classPage.ejs file for the authenticated teacher to view attendance */
 exports.getViewAttendance = (req, res, next) => {
   const code = req.params.classCode.slice(1);
+  const userId = req.params.teacherId.slice(1);
   /*console.log(code);*/
-  Class.findOne({ code: code }, function (err, foundClass) {
-    if (err) console.log(err);
-    if (foundClass) {
-      /*console.log(foundClass);
+  User.findOne({ userId: userId }, function (err, foundUser) {
+    if (foundUser.isAuth !== true) {
+      res.redirect("/notAuth");
+    } else {
+      Class.findOne({ code: code }, function (err, foundClass) {
+        if (err) console.log(err);
+        if (foundClass) {
+          /*console.log(foundClass);
       console.log(typeof foundClass);*/
-      res.render("classPage", {
-        class1: foundClass,
+          res.render("classPage", {
+            class1: foundClass,
+            userId: userId,
+          });
+        }
       });
     }
   });
 };
 
-/* get attendancezPage.ejs for the teacher to take attendance */
+/* get attendancezPage.ejs for the authenticated teacher to take attendance */
 exports.getTakeAttendance = (req, res, next) => {
   const classCode = req.params.classCode.slice(1);
   const teacherId = req.params.teacherId.slice(1);
   /*console.log(classCode);
   console.log(teacherId);*/
-
-  Class.findOne({ code: classCode }, function (err, foundClass) {
-    if (err) console.log(err);
-    if (foundClass) {
-      /*console.log(foundClass);*/
-      res.render("attendancePage", {
-        class1: foundClass,
-        teacherId: teacherId,
+  User.findOne({ userId: teacherId }, function (err, foundUser) {
+    if (foundUser.isAuth !== true) {
+      res.redirect("/notAuth");
+    } else {
+      Class.findOne({ code: classCode }, function (err, foundClass) {
+        if (err) console.log(err);
+        if (foundClass) {
+          /*console.log(foundClass);*/
+          res.render("attendancePage", {
+            class1: foundClass,
+            teacherId: teacherId,
+          });
+        }
       });
     }
   });

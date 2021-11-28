@@ -1,4 +1,13 @@
 <%- include('partials/header'); -%>
+<!--log out button-->
+<form class="form-inline" action = "/logout" method = "POST">
+          <input class="form-control mr-sm-2" type="hidden" />
+          <button class="btn btn-primary my-2 my-sm-0" name = "userId" type="submit" value = "<%=user.userId%>">
+            Log Out
+          </button>
+        </form>
+      </div>
+    </nav>
 <div class="d-flex justify-content-end m-2" style="padding-right: 10px">
   <h5>Hi, <%=user.name%></h5>
 </div>
