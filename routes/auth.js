@@ -6,21 +6,53 @@ const classController = require("../controllers/class_");
 const { check, body } = require("express-validator");
 
 /* get the home or sign in page */
-router.get("/", function (req, res) {
-  const error = [];
-  res.render("home", { error: error });
-});
+router
+  .use(function (req, res, next) {
+    res.set(
+      "Cache-Control",
+      "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0"
+    );
+    next();
+  })
+  .get("/", function (req, res) {
+    const error = [];
+    res.render("home", { error: error });
+  });
 
 /* post the sign in of the user */
-router.post("/", authController.postSignin);
+router
+  .use(function (req, res, next) {
+    res.set(
+      "Cache-Control",
+      "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0"
+    );
+    next();
+  })
+  .post("/", authController.postSignin);
 
 /* get 401 error page */
-router.get("/notAuth", function (req, res) {
-  res.render("401");
-});
+router
+  .use(function (req, res, next) {
+    res.set(
+      "Cache-Control",
+      "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0"
+    );
+    next();
+  })
+  .get("/notAuth", function (req, res) {
+    res.render("401");
+  });
 
 /* log out the user */
-router.post("/logout", authController.logout);
+router
+  .use(function (req, res, next) {
+    res.set(
+      "Cache-Control",
+      "no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0"
+    );
+    next();
+  })
+  .post("/logout", authController.logout);
 
 module.exports = router;
 
