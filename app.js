@@ -4,7 +4,7 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 
 mongoose.connect(
-  "mongodb+srv://salonee05:Aditeegupta067@appcluster.cd3vw.mongodb.net/appDb",
+  "MONGODB URL",
   { useNewUrlParser: true }
 );
 
